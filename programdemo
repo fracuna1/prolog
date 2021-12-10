@@ -1,0 +1,61 @@
+start_state(entrance).
+next_state(entrance,a,fail).
+next_state(entrance,b,foot).
+next_state(entrance,c,entrance).
+next_state(foot,a,fail).
+next_state(foot,b,fail).
+next_state(foot,c,joy).
+
+
+display_intro :-
+    write('intro'),nl,nl.
+initialize :- asserta(stored_answer(moves,0)),
+    asserta(stored_answer(treasure,0)).
+
+goodbye :  stored_answer(moves,Count),
+    write( 'You made this many moves...' ),
+    write( Count ), nl,
+    stored_answer(treasure,Amount),
+    write( 'You have this much money...$' ),
+    write( Amount ), nl,   write( 'Have a nice day'), nl.
+
+show_state(entrance) :-
+    write('entrance'),nl.
+
+show_state(foot) :-
+    write('foot'),nl.
+
+show_state(fail) :-
+    write('fail'),nl.
+
+show_state(joy) :-
+    write('joy'),nl.
+
+get_choice(fail,q).
+get_choice(joy,q).
+
+show_transition(entrance,a) :
+write('light'),nl.
+
+show_transition(entrance,b) :
+write('dark'),nl.
+
+show_transition(entrance,c) :
+write('breathe'),nl.
+
+show_transition(foot,a) :
+write('run'),nl.
+
+show_transition(foot,b) :
+write('fight'),nl.
+
+show_transition(foot,c) :
+write('sorry'),nl.
+
+show_transition(_,q) :-
+    write('quitter'),nl.
+
+show_transition(_,fail) :-
+    write( 'a,b,c, or q' ),nl.
+
+

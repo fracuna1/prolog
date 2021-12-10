@@ -1,0 +1,26 @@
+%Felicia Acuna CSC240 Program13
+%This program is a list of definitions of rules
+%
+
+%relatedByMovie(<actors name>,<actors name>)
+relatedByMovie().
+
+%costarOf(<co_stars name>,<movie name>,<actors name>)
+costarOf().
+
+%favoredDirectorOf(<directors name>,<actors name>)
+favoredDirectorOf().
+
+%bigCityActor(<actors name>)
+bigCityActor().
+
+%followingYear(<movies name in year X>,movies name in year X+1>)
+followingYear().
+
+%contemporaryOf(<contemporary>,<actor>)
+contemporaryOf().
+
+%movieConnected(<actors name>,<actors name>)
+movieConnected().
+
+
